@@ -1,0 +1,10 @@
+mixin link(href, name)
+  //- attributes == {class: "link-btn"}
+  a(class!= attributes.class href= href)= name
+
+mixin article(title="webm-test-data")
+  article.article
+    h1= title
+
+mixin listItem(name)    
+  li= name
