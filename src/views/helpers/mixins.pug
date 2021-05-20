@@ -5,6 +5,10 @@ mixin article(title="webm-test-data")
   article.article
     h1= title
 
+mixin paragraph(tag, content)
+  if tag === "p"
+    p= `${content}`
+
 mixin list(type, ...items)
   div(class!= attributes.class)
     each item in items
