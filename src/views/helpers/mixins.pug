@@ -21,3 +21,22 @@ mixin input(placeholder, name)
 
 mixin button(text)
   button(class!= attributes.class type='submit')= `${text}`
+
+mixin card(content)
+  .card-list__el
+    figure.left
+      img(src= `img/${content.image}`)
+    .card-list__header
+      .card-list__header_el-title= `${content.title}`
+      .card-list__header_el-price= `${content.price_currency} ${content.price}`
+    .card-list__el-params
+      block
+    .card-list__footer
+      .footer_el-dopparams= `${content.year}`
+      .footer_el-dopparams= `${content.mileage} ${content.mileage_measure}`
+      .footer_el-dopparams= `${content.axle_configuration}`
+
+mixin content(param, ...items)
+  span= `  ${param}: `
+    each text in items
+      i= `${text}`
