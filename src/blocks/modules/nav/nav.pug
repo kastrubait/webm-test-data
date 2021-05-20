@@ -1,0 +1,6 @@
+include ./../../../views/helpers/mixins
+
+nav.menu
+  .menu__list
+    each item in nav
+      +link(`${item.href}`, `${item.text}`)
