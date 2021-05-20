@@ -1,0 +1,60 @@
+@import "./helpers/variables";
+.param {
+  margin-top: 0.5*$base-font-size;
+  width: 20%;
+  background-color: $bacground-block-color;
+}
+.container {
+    display: block;
+    position: relative;
+    padding-left: 2*$base-font-size;
+    margin-bottom: 0.5*$base-font-size;
+    cursor: pointer;
+    font-size: $base-font-size;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: $base-white-color;
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      &:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid $active-link-text;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      &:checked ~ .checkmark {
+        background-color:  $bacground-link-active;
+      }
+      &:checked ~ .checkmark:after {
+        display: block;
+      }
+    }
+    &:hover {
+      input ~ .checkmark {
+        background-color: $base-white-color;
+      }
+    } 
+  }

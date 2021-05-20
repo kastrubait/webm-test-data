@@ -1,10 +1,19 @@
 mixin link(href, name)
-  //- attributes == {class: "link-btn"}
   a(class!= attributes.class href= href)= name
 
 mixin article(title="webm-test-data")
   article.article
     h1= title
 
-mixin listItem(name)    
-  li= name
+mixin list(type, ...items)
+  div(class!= attributes.class)
+    each item in items
+      label.container= `${item}`
+        input(type=`${type}`)
+        span.checkmark
+
+mixin input(placeholder, name)
+  input(class!= attributes.class type='text' placeholder=`${placeholder}` name=`${name}`)
+
+mixin button(text)
+  button(class!= attributes.class type='submit')= `${text}`
