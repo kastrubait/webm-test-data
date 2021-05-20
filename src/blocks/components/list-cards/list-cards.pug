@@ -1,0 +1,9 @@
+.card-list
+  each item in stock
+    +card(item)
+      +content('make', item.make)
+      +content('model', item.model)
+      +content('type', item.type)
+      +content('power', item.power, item.power_measure)
+      +content('payload', item.payload)
+      +content('gross weight', item.gross_weight)

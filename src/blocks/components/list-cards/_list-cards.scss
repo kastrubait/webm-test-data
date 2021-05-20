@@ -1,0 +1,39 @@
+.card-list {
+  overflow: hidden;
+  margin-top: 0.5*$base-font-size;
+  margin-left: 0.5*$base-font-size;
+  padding-left: $base-font-size;
+  &__header, &__footer {
+    display: flex;
+    justify-content: space-between; 
+  }
+  &__header {
+    width: 100%;
+    &_el-title {
+      font-weight: 800;
+    }
+  }
+ 
+  &__footer{
+    width: 40%;
+  }
+  &__footer_el-dopparams {
+    display: inline-block;
+    margin: 0 $base-font-size;
+    background-color: $bacground-link-active;
+  }
+  &__el {
+    margin-bottom: $base-font-size;
+    background-color: $bacground-block-color;
+    .left {
+      float: left;
+      margin: 0.5em 1em 1em 0.5em;
+     }
+    img {
+     width: 170px;
+   }
+  }
+  &__el-params {
+    margin: $base-font-size 0;
+  }
+}
